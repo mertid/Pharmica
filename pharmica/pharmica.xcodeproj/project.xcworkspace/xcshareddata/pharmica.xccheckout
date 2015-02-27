@@ -5,13 +5,13 @@
 	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
 	<false/>
 	<key>IDESourceControlProjectIdentifier</key>
-	<string>31C29EF2-A9D5-4B07-A09D-CAABDDF59E29</string>
+	<string>C7482350-B96F-4A5E-807E-A3B6BAB9B5E4</string>
 	<key>IDESourceControlProjectName</key>
 	<string>pharmica</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
 		<key>219CF56727E16B3CE2A79BE96E90C7F47C9A42CD</key>
-		<string>https://github.com/mertid/Pharmica.git</string>
+		<string>https://github.com/mertid/Pharmica</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
 	<string>pharmica/pharmica.xcodeproj</string>
@@ -21,7 +21,7 @@
 		<string>../../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
-	<string>https://github.com/mertid/Pharmica.git</string>
+	<string>https://github.com/mertid/Pharmica</string>
 	<key>IDESourceControlProjectVersion</key>
 	<integer>111</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
