@@ -1,0 +1,446 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		226E93FF1AA0F297004EE212 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 226E93FE1AA0F297004EE212 /* main.m */; };
+		226E94021AA0F297004EE212 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 226E94011AA0F297004EE212 /* AppDelegate.m */; };
+		226E94051AA0F297004EE212 /* pharmica.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 226E94031AA0F297004EE212 /* pharmica.xcdatamodeld */; };
+		226E94081AA0F297004EE212 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 226E94071AA0F297004EE212 /* ViewController.m */; };
+		226E940B1AA0F297004EE212 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 226E94091AA0F297004EE212 /* Main.storyboard */; };
+		226E940D1AA0F297004EE212 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 226E940C1AA0F297004EE212 /* Images.xcassets */; };
+		226E94101AA0F297004EE212 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 226E940E1AA0F297004EE212 /* LaunchScreen.xib */; };
+		226E941C1AA0F298004EE212 /* pharmicaTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 226E941B1AA0F298004EE212 /* pharmicaTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		226E94161AA0F297004EE212 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 226E93F11AA0F297004EE212 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 226E93F81AA0F297004EE212;
+			remoteInfo = pharmica;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		226E93F91AA0F297004EE212 /* pharmica.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = pharmica.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		226E93FD1AA0F297004EE212 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		226E93FE1AA0F297004EE212 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		226E94001AA0F297004EE212 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		226E94011AA0F297004EE212 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		226E94041AA0F297004EE212 /* pharmica.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = pharmica.xcdatamodel; sourceTree = "<group>"; };
+		226E94061AA0F297004EE212 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		226E94071AA0F297004EE212 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		226E940A1AA0F297004EE212 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		226E940C1AA0F297004EE212 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		226E940F1AA0F297004EE212 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		226E94151AA0F297004EE212 /* pharmicaTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = pharmicaTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		226E941A1AA0F297004EE212 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		226E941B1AA0F298004EE212 /* pharmicaTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = pharmicaTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		226E93F61AA0F297004EE212 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		226E94121AA0F297004EE212 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		226E93F01AA0F297004EE212 = {
+			isa = PBXGroup;
+			children = (
+				226E93FB1AA0F297004EE212 /* pharmica */,
+				226E94181AA0F297004EE212 /* pharmicaTests */,
+				226E93FA1AA0F297004EE212 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		226E93FA1AA0F297004EE212 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				226E93F91AA0F297004EE212 /* pharmica.app */,
+				226E94151AA0F297004EE212 /* pharmicaTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		226E93FB1AA0F297004EE212 /* pharmica */ = {
+			isa = PBXGroup;
+			children = (
+				226E94001AA0F297004EE212 /* AppDelegate.h */,
+				226E94011AA0F297004EE212 /* AppDelegate.m */,
+				226E94061AA0F297004EE212 /* ViewController.h */,
+				226E94071AA0F297004EE212 /* ViewController.m */,
+				226E94091AA0F297004EE212 /* Main.storyboard */,
+				226E940C1AA0F297004EE212 /* Images.xcassets */,
+				226E940E1AA0F297004EE212 /* LaunchScreen.xib */,
+				226E94031AA0F297004EE212 /* pharmica.xcdatamodeld */,
+				226E93FC1AA0F297004EE212 /* Supporting Files */,
+			);
+			path = pharmica;
+			sourceTree = "<group>";
+		};
+		226E93FC1AA0F297004EE212 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				226E93FD1AA0F297004EE212 /* Info.plist */,
+				226E93FE1AA0F297004EE212 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		226E94181AA0F297004EE212 /* pharmicaTests */ = {
+			isa = PBXGroup;
+			children = (
+				226E941B1AA0F298004EE212 /* pharmicaTests.m */,
+				226E94191AA0F297004EE212 /* Supporting Files */,
+			);
+			path = pharmicaTests;
+			sourceTree = "<group>";
+		};
+		226E94191AA0F297004EE212 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				226E941A1AA0F297004EE212 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		226E93F81AA0F297004EE212 /* pharmica */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 226E941F1AA0F298004EE212 /* Build configuration list for PBXNativeTarget "pharmica" */;
+			buildPhases = (
+				226E93F51AA0F297004EE212 /* Sources */,
+				226E93F61AA0F297004EE212 /* Frameworks */,
+				226E93F71AA0F297004EE212 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = pharmica;
+			productName = pharmica;
+			productReference = 226E93F91AA0F297004EE212 /* pharmica.app */;
+			productType = "com.apple.product-type.application";
+		};
+		226E94141AA0F297004EE212 /* pharmicaTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 226E94221AA0F298004EE212 /* Build configuration list for PBXNativeTarget "pharmicaTests" */;
+			buildPhases = (
+				226E94111AA0F297004EE212 /* Sources */,
+				226E94121AA0F297004EE212 /* Frameworks */,
+				226E94131AA0F297004EE212 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				226E94171AA0F297004EE212 /* PBXTargetDependency */,
+			);
+			name = pharmicaTests;
+			productName = pharmicaTests;
+			productReference = 226E94151AA0F297004EE212 /* pharmicaTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		226E93F11AA0F297004EE212 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0610;
+				ORGANIZATIONNAME = "Merritt Tidwell";
+				TargetAttributes = {
+					226E93F81AA0F297004EE212 = {
+						CreatedOnToolsVersion = 6.1.1;
+					};
+					226E94141AA0F297004EE212 = {
+						CreatedOnToolsVersion = 6.1.1;
+						TestTargetID = 226E93F81AA0F297004EE212;
+					};
+				};
+			};
+			buildConfigurationList = 226E93F41AA0F297004EE212 /* Build configuration list for PBXProject "pharmica" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 226E93F01AA0F297004EE212;
+			productRefGroup = 226E93FA1AA0F297004EE212 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				226E93F81AA0F297004EE212 /* pharmica */,
+				226E94141AA0F297004EE212 /* pharmicaTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		226E93F71AA0F297004EE212 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				226E940B1AA0F297004EE212 /* Main.storyboard in Resources */,
+				226E94101AA0F297004EE212 /* LaunchScreen.xib in Resources */,
+				226E940D1AA0F297004EE212 /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		226E94131AA0F297004EE212 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		226E93F51AA0F297004EE212 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				226E94021AA0F297004EE212 /* AppDelegate.m in Sources */,
+				226E94051AA0F297004EE212 /* pharmica.xcdatamodeld in Sources */,
+				226E94081AA0F297004EE212 /* ViewController.m in Sources */,
+				226E93FF1AA0F297004EE212 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		226E94111AA0F297004EE212 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				226E941C1AA0F298004EE212 /* pharmicaTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		226E94171AA0F297004EE212 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 226E93F81AA0F297004EE212 /* pharmica */;
+			targetProxy = 226E94161AA0F297004EE212 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		226E94091AA0F297004EE212 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				226E940A1AA0F297004EE212 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		226E940E1AA0F297004EE212 /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				226E940F1AA0F297004EE212 /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		226E941D1AA0F298004EE212 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		226E941E1AA0F298004EE212 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		226E94201AA0F298004EE212 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = pharmica/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		226E94211AA0F298004EE212 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = pharmica/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		226E94231AA0F298004EE212 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = pharmicaTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/pharmica.app/pharmica";
+			};
+			name = Debug;
+		};
+		226E94241AA0F298004EE212 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = pharmicaTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/pharmica.app/pharmica";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		226E93F41AA0F297004EE212 /* Build configuration list for PBXProject "pharmica" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				226E941D1AA0F298004EE212 /* Debug */,
+				226E941E1AA0F298004EE212 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		226E941F1AA0F298004EE212 /* Build configuration list for PBXNativeTarget "pharmica" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				226E94201AA0F298004EE212 /* Debug */,
+				226E94211AA0F298004EE212 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		226E94221AA0F298004EE212 /* Build configuration list for PBXNativeTarget "pharmicaTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				226E94231AA0F298004EE212 /* Debug */,
+				226E94241AA0F298004EE212 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		226E94031AA0F297004EE212 /* pharmica.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				226E94041AA0F297004EE212 /* pharmica.xcdatamodel */,
+			);
+			currentVersion = 226E94041AA0F297004EE212 /* pharmica.xcdatamodel */;
+			path = pharmica.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 226E93F11AA0F297004EE212 /* Project object */;
+}
