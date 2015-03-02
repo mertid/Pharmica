@@ -18,6 +18,7 @@
 		226E94271AA0F57A004EE212 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 226E94251AA0F57A004EE212 /* Model.xcdatamodeld */; };
 		226E94291AA0F5D3004EE212 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 226E94281AA0F5D3004EE212 /* CoreData.framework */; };
 		4231C6281AA10A15009B48F8 /* MilestonesTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4231C6271AA10A15009B48F8 /* MilestonesTableViewController.m */; };
+		423D1DA51AA42A6F003EF7B3 /* Milestone.m in Sources */ = {isa = PBXBuildFile; fileRef = 423D1DA41AA42A6F003EF7B3 /* Milestone.m */; };
 		4265DF941AA118D80017B620 /* Di-Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4265DF931AA118D80017B620 /* Di-Storyboard.storyboard */; };
 /* End PBXBuildFile section */
 
@@ -50,6 +51,8 @@
 		226E94281AA0F5D3004EE212 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		4231C6261AA10A15009B48F8 /* MilestonesTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MilestonesTableViewController.h; sourceTree = "<group>"; };
 		4231C6271AA10A15009B48F8 /* MilestonesTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MilestonesTableViewController.m; sourceTree = "<group>"; };
+		423D1DA31AA42A6F003EF7B3 /* Milestone.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Milestone.h; sourceTree = "<group>"; };
+		423D1DA41AA42A6F003EF7B3 /* Milestone.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Milestone.m; sourceTree = "<group>"; };
 		4265DF931AA118D80017B620 /* Di-Storyboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = "Di-Storyboard.storyboard"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -106,6 +109,8 @@
 				226E940C1AA0F297004EE212 /* Images.xcassets */,
 				226E940E1AA0F297004EE212 /* LaunchScreen.xib */,
 				226E94031AA0F297004EE212 /* pharmica.xcdatamodeld */,
+				423D1DA31AA42A6F003EF7B3 /* Milestone.h */,
+				423D1DA41AA42A6F003EF7B3 /* Milestone.m */,
 				226E93FC1AA0F297004EE212 /* Supporting Files */,
 			);
 			path = pharmica;
@@ -241,6 +246,7 @@
 				226E94021AA0F297004EE212 /* AppDelegate.m in Sources */,
 				226E94051AA0F297004EE212 /* pharmica.xcdatamodeld in Sources */,
 				4231C6281AA10A15009B48F8 /* MilestonesTableViewController.m in Sources */,
+				423D1DA51AA42A6F003EF7B3 /* Milestone.m in Sources */,
 				226E94271AA0F57A004EE212 /* Model.xcdatamodeld in Sources */,
 				226E94081AA0F297004EE212 /* ViewController.m in Sources */,
 				226E93FF1AA0F297004EE212 /* main.m in Sources */,
