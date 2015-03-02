@@ -59,6 +59,31 @@
                          @"Last Data Available",
                          @"Combined Technical Document",
                          @"Phase IV Start"];
+    
+    
+    NSArray * studyList = @[@"Draft Protocol Available",
+                            @"Transfer of Obligation",
+                            @"Study Start Date",
+                            @"Study End Date",
+                            @"Final Protocol Available",
+                            @"Informed Consent Available",
+                            @"Contract Template Available",
+                            @"Drug Available",
+                            @"Labels Available",
+                            @"Other Clinical Supplies Available",
+                            @"First Patient Enrolled",
+                            @"Last Patient Enrolled",
+                            @"First Patient Screened",
+                            @"Last Patient Screened",
+                            @"First Patient Randomized",
+                            @"Last Patient Randomized",
+                            @"Last Patient Last Visit",
+                            @"Last Data Avaliable",
+                            @"Data Base Lock",
+                            @"Clinical Study Report",
+                            @"Trial Master File Archived",
+                            ];
+    
     self.appdel = [UIApplication sharedApplication].delegate;
     NSManagedObjectContext *context = self.appdel.managedObjectContext;
     for (NSString *s in regList) {
@@ -66,17 +91,34 @@
                                                       inManagedObjectContext:context];
         [ms setName:s];
         [ms setType:@"regulatory"];
+        [ms setAttribute:@"program"];
         [context insertObject:ms];
-        /*[self.appdel saveContext];*/
+        [self.appdel saveContext];
     }
     for (NSString *s in cliList) {
         Milestone *ms = [NSEntityDescription insertNewObjectForEntityForName:@"Milestone"
                                                       inManagedObjectContext:context];
         [ms setName:s];
         [ms setType:@"clinical"];
+        [ms setAttribute:@"program"];
         [context insertObject:ms];
-        /*[self.appdel saveContext];*/
+        [self.appdel saveContext];
     }
+    for (NSString *s in studyList) {
+        Milestone *ms = [NSEntityDescription insertNewObjectForEntityForName:@"Milestone"
+                                                      inManagedObjectContext:context];
+        [ms setName:s];
+        [ms setType:@"regulatory"];
+        [ms setAttribute:@"study"];
+        [context insertObject:ms];
+        [self.appdel saveContext];
+
+
+        
+    }
+
+
+
 }
 
 - (void)tearDown {
