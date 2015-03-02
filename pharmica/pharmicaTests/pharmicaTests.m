@@ -131,7 +131,7 @@
     NSManagedObjectContext *context = self.appdel.managedObjectContext;
     NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"Milestone"];
     NSError *error;
-    [request setPredicate:[NSPredicate predicateWithFormat:@"type = 'clinical'"]];
+    [request setPredicate:[NSPredicate predicateWithFormat:@"type = 'regulatory'"]];
     NSArray *milestoneList = [context executeFetchRequest:request error:&error];
     for (Milestone *ms in milestoneList) {
         NSLog(@"%@", ms);

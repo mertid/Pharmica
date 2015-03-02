@@ -14,11 +14,11 @@
 
 @property (nonatomic) NSManagedObjectContext *context;
 @property (nonatomic) NSArray *milestoneList;
-@property (nonatomic) NSIndexPath *editingIndexPath;
 @property (nonatomic) NSDateFormatter *formatter;
 @property (nonatomic) UIDatePicker *plannedPicker;
 @property (nonatomic) UIDatePicker *actualPicker;
 @property (nonatomic) UIDatePicker *adjustedPicker;
+@property (nonatomic) UITextField *editingTextField;
 
 @end
 
@@ -27,38 +27,43 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    // These three properties should be passed in from another view controller
+    // Im simply setting them here for test purpose
+    self.milestoneType = @"clinical";
+    self.attribute = @"program";
+    self.name = @"Test Program";
+    // Core data access
     AppDelegate *appdel = [UIApplication sharedApplication].delegate;
     NSManagedObjectContext *context = appdel.managedObjectContext;
     NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"Milestone"];
     NSError *error;
-    self.milestoneType = @"clinical";
-    [request setPredicate:[NSPredicate predicateWithFormat:@"type = %@", self.milestoneType]];
+    // Predicate to fetch with type and attribute
+    [request setPredicate:[NSPredicate predicateWithFormat:@"(type = %@) AND (attribute = %@)", self.milestoneType, self.attribute]];
     self.milestoneList = [context executeFetchRequest:request error:&error];
     self.title = [NSString stringWithFormat:@"%@ Milestone", self.milestoneType.capitalizedString];
     self.formatter = [[NSDateFormatter alloc] init];
-    [self.formatter setDateStyle:NSDateFormatterFullStyle];
+    [self.formatter setDateStyle:NSDateFormatterLongStyle];
     [self.formatter setTimeStyle:NSDateFormatterNoStyle];
-    
+    // Background tap dismisses date picker
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]
+                                   initWithTarget:self
+                                   action:@selector(dismissKeyboard)];
+    [self.view addGestureRecognizer:tap];
+    // Date picker for planned date
     self.plannedPicker = [[UIDatePicker alloc] init];
     self.plannedPicker.datePickerMode = UIDatePickerModeDate;
     [self.plannedPicker addTarget:self action:@selector(plannedPickerValueChanged:)
             forControlEvents:UIControlEventValueChanged];
-    
+    // Date picker for actual date
     self.actualPicker = [[UIDatePicker alloc] init];
     self.actualPicker.datePickerMode = UIDatePickerModeDate;
     [self.actualPicker addTarget:self action:@selector(actualPickerValueChanged:)
            forControlEvents:UIControlEventValueChanged];
-    
+    // Date picker for adjusted date
     self.adjustedPicker = [[UIDatePicker alloc] init];
     self.adjustedPicker.datePickerMode = UIDatePickerModeDate;
     [self.adjustedPicker addTarget:self action:@selector(adjustedPickerValueChanged:)
              forControlEvents:UIControlEventValueChanged];
-    
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
-    
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -66,13 +71,21 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (void)dismissKeyboard {
+
+    [self.view endEditing:YES];
+}
+
 - (IBAction)plannedPickerValueChanged:(UIDatePicker *)sender {
 
     AppDelegate *appdel = [UIApplication sharedApplication].delegate;
-    UITableViewCell *editingCell = [self.tableView cellForRowAtIndexPath:self.editingIndexPath];
-    UITextField *plannedField = (UITextField *)[editingCell viewWithTag:2];
-    Milestone *milestone = self.milestoneList[self.editingIndexPath.row];
-    plannedField.text = [self.formatter stringFromDate:sender.date];
+    // Get the cell of which the text field is contained in
+    // superview = container, superview.superview = cell
+    UITableViewCell *editingCell = (UITableViewCell *)self.editingTextField.superview.superview;
+    NSIndexPath *editingIndexPath = [self.tableView indexPathForCell:editingCell];
+    // Change text field text display and managedObject attribute
+    self.editingTextField.text = [self.formatter stringFromDate:sender.date];
+    Milestone *milestone = self.milestoneList[editingIndexPath.row];
     milestone.planned = sender.date;
     [appdel saveContext];
 }
@@ -80,10 +93,13 @@
 - (IBAction)actualPickerValueChanged:(UIDatePicker *)sender {
     
     AppDelegate *appdel = [UIApplication sharedApplication].delegate;
-    UITableViewCell *editingCell = [self.tableView cellForRowAtIndexPath:self.editingIndexPath];
-    UITextField *actualField = (UITextField *)[editingCell viewWithTag:3];
-    Milestone *milestone = self.milestoneList[self.editingIndexPath.row];
-    actualField.text = [self.formatter stringFromDate:sender.date];
+    // Get the cell of which the text field is contained in
+    // superview = container, superview.superview = cell
+    UITableViewCell *editingCell = (UITableViewCell *)self.editingTextField.superview.superview;
+    NSIndexPath *editingIndexPath = [self.tableView indexPathForCell:editingCell];
+    // Change text field text display and managedObject attribute
+    self.editingTextField.text = [self.formatter stringFromDate:sender.date];
+    Milestone *milestone = self.milestoneList[editingIndexPath.row];
     milestone.actual = sender.date;
     [appdel saveContext];
 }
@@ -91,13 +107,17 @@
 - (IBAction)adjustedPickerValueChanged:(UIDatePicker *)sender {
     
     AppDelegate *appdel = [UIApplication sharedApplication].delegate;
-    UITableViewCell *editingCell = [self.tableView cellForRowAtIndexPath:self.editingIndexPath];
-    UITextField *adjustedField = (UITextField *)[editingCell viewWithTag:4];
-    Milestone *milestone = self.milestoneList[self.editingIndexPath.row];
-    adjustedField.text = [self.formatter stringFromDate:sender.date];
+    // Get the cell of which the text field is contained in
+    // superview = container, superview.superview = cell
+    UITableViewCell *editingCell = (UITableViewCell *)self.editingTextField.superview.superview;
+    NSIndexPath *editingIndexPath = [self.tableView indexPathForCell:editingCell];
+    // Change text field text display and managedObject attribute
+    self.editingTextField.text = [self.formatter stringFromDate:sender.date];
+    Milestone *milestone = self.milestoneList[editingIndexPath.row];
     milestone.adjusted = sender.date;
     [appdel saveContext];
 }
+
 
 #pragma mark - Table view data source
 
@@ -115,12 +135,13 @@
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
     
-    // Configure the cell...
-    cell.tag = indexPath.row * 10;
+    // Pointer to cell label & text fields
     UILabel *nameLabel = (UILabel *)[cell viewWithTag:1];
     UITextField *plannedField = (UITextField *)[cell viewWithTag:2];
     UITextField *actualField = (UITextField *)[cell viewWithTag:3];
     UITextField *adjustedField = (UITextField *)[cell viewWithTag:4];
+    
+    // Set up cell text fields and date picker popups
     Milestone *milestone = self.milestoneList[indexPath.row];
     nameLabel.text = milestone.name;
     plannedField.text = [self.formatter stringFromDate:milestone.planned];
@@ -138,6 +159,7 @@
 
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
 
+    // Return "SectionHeader" cells as header
     UITableViewCell *sectionHeader = [tableView dequeueReusableCellWithIdentifier:@"SectionHeader"];
     return sectionHeader;
 }
@@ -146,14 +168,15 @@
 
 - (void)textFieldDidBeginEditing:(UITextField *)textField {
 
-    NSInteger editingTag = textField.superview.tag;
-    UITableViewCell *editingCell = (UITableViewCell *)[self.tableView viewWithTag:editingTag];
-    self.editingIndexPath = [self.tableView indexPathForCell:editingCell];
+    // Selected textfield is assigned to be visible to whole interface
+    // so that other method has access to it (xxxPickerValueChanged)
+    self.editingTextField = textField;
 }
 
 - (void)textFieldDidEndEditing:(UITextField *)textField {
 
-    self.editingIndexPath = nil;
+    // Editing done, assign nil to the property
+    self.editingTextField = nil;
 }
 
 /*
