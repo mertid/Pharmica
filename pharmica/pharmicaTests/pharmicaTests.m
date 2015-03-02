@@ -8,8 +8,12 @@
 
 #import <UIKit/UIKit.h>
 #import <XCTest/XCTest.h>
+#import "AppDelegate.h"
+#import "Milestone.h"
 
 @interface pharmicaTests : XCTestCase
+
+@property AppDelegate *appdel;
 
 @end
 
@@ -18,6 +22,61 @@
 - (void)setUp {
     [super setUp];
     // Put setup code here. This method is called before the invocation of each test method in the class.
+    NSArray *regList = @[@"IMPD",
+                         @"BLA Submission",
+                         @"BLA Approval",
+                         @"eIND Submission",
+                         @"eIND Approval",
+                         @"IND Submission",
+                         @"IND Approval",
+                         @"INDA Submission",
+                         @"INDa Approval",
+                         @"NDA Submission",
+                         @"NDA Approval",
+                         @"sNDA Submission",
+                         @"sNDA Approval",
+                         @"JNDA Submission",
+                         @"JNDA Approval",
+                         @"ANDA Submission",
+                         @"ANDA Approval",
+                         @"WMA Submission",
+                         @"WMA Approval",
+                         @"PIP Submission",
+                         @"PIP Approval",
+                         @"HDE Submission",
+                         @"HDE Approval"];
+    NSArray *cliList = @[@"Preclinical Data Available",
+                         @"Program Start",
+                         @"Program End",
+                         @"First First In Man",
+                         @"Clinical Investigator Brochure Available",
+                         @"End of Phase I",
+                         @"Go/No Go - Phase II",
+                         @"Phase II Start",
+                         @"Go/No Go - Phase III",
+                         @"Phase III Start",
+                         @"Last Patient Last Visit",
+                         @"Last Data Available",
+                         @"Combined Technical Document",
+                         @"Phase IV Start"];
+    self.appdel = [UIApplication sharedApplication].delegate;
+    NSManagedObjectContext *context = self.appdel.managedObjectContext;
+    for (NSString *s in regList) {
+        Milestone *ms = [NSEntityDescription insertNewObjectForEntityForName:@"Milestone"
+                                                      inManagedObjectContext:context];
+        [ms setName:s];
+        [ms setType:@"regulatory"];
+        [context insertObject:ms];
+        /*[self.appdel saveContext];*/
+    }
+    for (NSString *s in cliList) {
+        Milestone *ms = [NSEntityDescription insertNewObjectForEntityForName:@"Milestone"
+                                                      inManagedObjectContext:context];
+        [ms setName:s];
+        [ms setType:@"clinical"];
+        [context insertObject:ms];
+        /*[self.appdel saveContext];*/
+    }
 }
 
 - (void)tearDown {
@@ -25,16 +84,23 @@
     [super tearDown];
 }
 
-- (void)testExample {
-    // This is an example of a functional test case.
-    XCTAssert(YES, @"Pass");
+- (void)testCoreDataFetch {
+    
+    NSManagedObjectContext *context = self.appdel.managedObjectContext;
+    NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"Milestone"];
+    NSError *error;
+    [request setPredicate:[NSPredicate predicateWithFormat:@"type = 'clinical'"]];
+    NSArray *milestoneList = [context executeFetchRequest:request error:&error];
+    for (Milestone *ms in milestoneList) {
+        NSLog(@"%@", ms);
+    }
 }
 
-- (void)testPerformanceExample {
+/*- (void)testPerformanceExample {
     // This is an example of a performance test case.
     [self measureBlock:^{
         // Put the code you want to measure the time of here.
     }];
-}
+}*/
 
 @end

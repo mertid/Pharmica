@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "Milestone.h"
 
 @interface AppDelegate ()
 
@@ -16,7 +17,68 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+    // Generate milestone data
+    /*NSArray *regList = @[@"IMPD",
+                         @"BLA Submission",
+                         @"BLA Approval",
+                         @"eIND Submission",
+                         @"eIND Approval",
+                         @"IND Submission",
+                         @"IND Approval",
+                         @"INDA Submission",
+                         @"INDa Approval",
+                         @"NDA Submission",
+                         @"NDA Approval",
+                         @"sNDA Submission",
+                         @"sNDA Approval",
+                         @"JNDA Submission",
+                         @"JNDA Approval",
+                         @"ANDA Submission",
+                         @"ANDA Approval",
+                         @"WMA Submission",
+                         @"WMA Approval",
+                         @"PIP Submission",
+                         @"PIP Approval",
+                         @"HDE Submission",
+                         @"HDE Approval"];
+    NSArray *cliList = @[@"Preclinical Data Available",
+                         @"Program Start",
+                         @"Program End",
+                         @"First First In Man",
+                         @"Clinical Investigator Brochure Available",
+                         @"End of Phase I",
+                         @"Go/No Go - Phase II",
+                         @"Phase II Start",
+                         @"Go/No Go - Phase III",
+                         @"Phase III Start",
+                         @"Last Patient Last Visit",
+                         @"Last Data Available",
+                         @"Combined Technical Document",
+                         @"Phase IV Start"];
+    NSManagedObjectContext *context = self.managedObjectContext;
+    for (NSString *s in regList) {
+        Milestone *ms = [NSEntityDescription insertNewObjectForEntityForName:@"Milestone"
+                                                      inManagedObjectContext:context];
+        [ms setName:s];
+        [ms setType:@"regulatory"];
+        [ms setPlanned:[NSDate date]];
+        [ms setActual:[NSDate date]];
+        [ms setAdjusted:[NSDate date]];
+        [context insertObject:ms];
+        [self saveContext];
+    }
+    for (NSString *s in cliList) {
+        Milestone *ms = [NSEntityDescription insertNewObjectForEntityForName:@"Milestone"
+                                                      inManagedObjectContext:context];
+        [ms setName:s];
+        [ms setType:@"clinical"];
+        [ms setPlanned:[NSDate date]];
+        [ms setActual:[NSDate date]];
+        [ms setAdjusted:[NSDate date]];
+        [context insertObject:ms];
+        [self saveContext];
+    }*/
+    
     return YES;
 }
 
@@ -75,6 +137,7 @@
     
     _persistentStoreCoordinator = [[NSPersistentStoreCoordinator alloc] initWithManagedObjectModel:[self managedObjectModel]];
     NSURL *storeURL = [[self applicationDocumentsDirectory] URLByAppendingPathComponent:@"pharmica.sqlite"];
+    NSLog(@"storeURL = %@", storeURL);
     NSError *error = nil;
     NSString *failureReason = @"There was an error creating or loading the application's saved data.";
     if (![_persistentStoreCoordinator addPersistentStoreWithType:NSSQLiteStoreType configuration:nil URL:storeURL options:nil error:&error]) {
