@@ -17,6 +17,8 @@
 @property (nonatomic, retain) NSDate * planned;
 @property (nonatomic, retain) NSDate * actual;
 @property (nonatomic, retain) NSDate * adjusted;
+@property (nonatomic, retain) NSString * attribute;
+
 
 - (IBAction)setPlannedDate:(UIDatePicker *)sender;
 - (IBAction)setActualDate:(UIDatePicker *)sender;

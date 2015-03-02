@@ -16,11 +16,12 @@
 @dynamic planned;
 @dynamic actual;
 @dynamic adjusted;
+@dynamic attribute;
 
 - (NSString *)description
 {
-    return [NSString stringWithFormat:@"name=%@  type=%@  planned=%@  actual=%@  adjusted=%@",
-            self.name, self.type, self.planned, self.actual, self.adjusted];
+    return [NSString stringWithFormat:@"name=%@  type=%@  planned=%@  actual=%@  adjusted=%@  attribute=%@",
+            self.name, self.type, self.planned, self.actual, self.adjusted, self.attribute];
 }
 
 - (void)setPlannedDate:(UIDatePicker *)sender {
