@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		224288C51AA55D2B007091AF /* StudyTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 224288C41AA55D2B007091AF /* StudyTableViewController.m */; };
 		226E93FF1AA0F297004EE212 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 226E93FE1AA0F297004EE212 /* main.m */; };
 		226E94021AA0F297004EE212 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 226E94011AA0F297004EE212 /* AppDelegate.m */; };
 		226E94051AA0F297004EE212 /* pharmica.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 226E94031AA0F297004EE212 /* pharmica.xcdatamodeld */; };
@@ -19,9 +18,9 @@
 		3033A1B11AA4E61000D9D2F0 /* Masih-Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3033A1B01AA4E61000D9D2F0 /* Masih-Storyboard.storyboard */; };
 		3033A1B61AA4E63100D9D2F0 /* CreateProgramViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3033A1B31AA4E63100D9D2F0 /* CreateProgramViewController.m */; };
 		3033A1B71AA4E63100D9D2F0 /* ExistingProgramTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3033A1B51AA4E63100D9D2F0 /* ExistingProgramTableViewController.m */; };
+		4225E8FF1AA6331D0031D39D /* StudyTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4225E8FE1AA6331D0031D39D /* StudyTableViewController.m */; };
 		4231C6281AA10A15009B48F8 /* MilestonesTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4231C6271AA10A15009B48F8 /* MilestonesTableViewController.m */; };
 		423D1DA51AA42A6F003EF7B3 /* Milestone.m in Sources */ = {isa = PBXBuildFile; fileRef = 423D1DA41AA42A6F003EF7B3 /* Milestone.m */; };
-		4265DF941AA118D80017B620 /* Di-Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4265DF931AA118D80017B620 /* Di-Storyboard.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,8 +34,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		224288C31AA55D2B007091AF /* StudyTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = StudyTableViewController.h; path = ../StudyTableViewController.h; sourceTree = "<group>"; };
-		224288C41AA55D2B007091AF /* StudyTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = StudyTableViewController.m; path = ../StudyTableViewController.m; sourceTree = "<group>"; };
 		226E93F91AA0F297004EE212 /* pharmica.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = pharmica.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		226E93FD1AA0F297004EE212 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		226E93FE1AA0F297004EE212 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -55,11 +52,12 @@
 		3033A1B31AA4E63100D9D2F0 /* CreateProgramViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CreateProgramViewController.m; sourceTree = "<group>"; };
 		3033A1B41AA4E63100D9D2F0 /* ExistingProgramTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExistingProgramTableViewController.h; sourceTree = "<group>"; };
 		3033A1B51AA4E63100D9D2F0 /* ExistingProgramTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExistingProgramTableViewController.m; sourceTree = "<group>"; };
+		4225E8FD1AA6331D0031D39D /* StudyTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StudyTableViewController.h; sourceTree = "<group>"; };
+		4225E8FE1AA6331D0031D39D /* StudyTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StudyTableViewController.m; sourceTree = "<group>"; };
 		4231C6261AA10A15009B48F8 /* MilestonesTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MilestonesTableViewController.h; sourceTree = "<group>"; };
 		4231C6271AA10A15009B48F8 /* MilestonesTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MilestonesTableViewController.m; sourceTree = "<group>"; };
 		423D1DA31AA42A6F003EF7B3 /* Milestone.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Milestone.h; sourceTree = "<group>"; };
 		423D1DA41AA42A6F003EF7B3 /* Milestone.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Milestone.m; sourceTree = "<group>"; };
-		4265DF931AA118D80017B620 /* Di-Storyboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = "Di-Storyboard.storyboard"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,12 +103,11 @@
 			children = (
 				226E94001AA0F297004EE212 /* AppDelegate.h */,
 				226E94011AA0F297004EE212 /* AppDelegate.m */,
-				224288C31AA55D2B007091AF /* StudyTableViewController.h */,
-				224288C41AA55D2B007091AF /* StudyTableViewController.m */,
+				4225E8FD1AA6331D0031D39D /* StudyTableViewController.h */,
+				4225E8FE1AA6331D0031D39D /* StudyTableViewController.m */,
 				4231C6261AA10A15009B48F8 /* MilestonesTableViewController.h */,
 				4231C6271AA10A15009B48F8 /* MilestonesTableViewController.m */,
 				226E94091AA0F297004EE212 /* Main.storyboard */,
-				4265DF931AA118D80017B620 /* Di-Storyboard.storyboard */,
 				3033A1B01AA4E61000D9D2F0 /* Masih-Storyboard.storyboard */,
 				3033A1B21AA4E63100D9D2F0 /* CreateProgramViewController.h */,
 				3033A1B31AA4E63100D9D2F0 /* CreateProgramViewController.m */,
@@ -235,7 +232,6 @@
 				3033A1B11AA4E61000D9D2F0 /* Masih-Storyboard.storyboard in Resources */,
 				226E940B1AA0F297004EE212 /* Main.storyboard in Resources */,
 				226E94101AA0F297004EE212 /* LaunchScreen.xib in Resources */,
-				4265DF941AA118D80017B620 /* Di-Storyboard.storyboard in Resources */,
 				226E940D1AA0F297004EE212 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -259,7 +255,7 @@
 				4231C6281AA10A15009B48F8 /* MilestonesTableViewController.m in Sources */,
 				3033A1B61AA4E63100D9D2F0 /* CreateProgramViewController.m in Sources */,
 				423D1DA51AA42A6F003EF7B3 /* Milestone.m in Sources */,
-				224288C51AA55D2B007091AF /* StudyTableViewController.m in Sources */,
+				4225E8FF1AA6331D0031D39D /* StudyTableViewController.m in Sources */,
 				3033A1B71AA4E63100D9D2F0 /* ExistingProgramTableViewController.m in Sources */,
 				226E93FF1AA0F297004EE212 /* main.m in Sources */,
 			);
