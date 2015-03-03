@@ -140,6 +140,7 @@
     UITextField *plannedField = (UITextField *)[cell viewWithTag:2];
     UITextField *actualField = (UITextField *)[cell viewWithTag:3];
     UITextField *adjustedField = (UITextField *)[cell viewWithTag:4];
+    cell.backgroundColor = [UIColor lightGrayColor];
     
     // Set up cell text fields and date picker popups
     Milestone *milestone = self.milestoneList[indexPath.row];
@@ -161,6 +162,7 @@
 
     // Return "SectionHeader" cells as header
     UITableViewCell *sectionHeader = [tableView dequeueReusableCellWithIdentifier:@"SectionHeader"];
+    sectionHeader.backgroundColor = [UIColor lightGrayColor];
     return sectionHeader;
 }
 
