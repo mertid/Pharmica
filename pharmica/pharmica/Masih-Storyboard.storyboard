@@ -59,7 +59,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="1Vf-9V-yQU">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ProgramCell" id="1Vf-9V-yQU">
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="1Vf-9V-yQU" id="i4W-H1-aOx">
                                     <autoresizingMask key="autoresizingMask"/>
@@ -455,7 +455,32 @@
                             <constraint firstItem="bTY-UU-Fiq" firstAttribute="leading" secondItem="16m-Mt-v98" secondAttribute="leadingMargin" id="zig-oN-mZG"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="New Program" id="F3U-jK-Smo"/>
+                    <navigationItem key="navigationItem" title="New Program" id="F3U-jK-Smo">
+                        <barButtonItem key="rightBarButtonItem" title="Save" id="cC6-tc-a7R">
+                            <connections>
+                                <action selector="save:" destination="ytT-ve-ORT" id="efc-U4-oVl"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outletCollection property="fields" destination="VO6-sP-Bxx" id="aYh-fd-I7X"/>
+                        <outletCollection property="fields" destination="wxL-2P-AR8" id="m0B-Oq-3T3"/>
+                        <outletCollection property="fields" destination="nV7-t5-faO" id="iBl-Of-VKH"/>
+                        <outletCollection property="fields" destination="dOG-6m-aKa" id="rzD-be-Cck"/>
+                        <outletCollection property="fields" destination="W98-dg-RpJ" id="B5U-hn-QGK"/>
+                        <outletCollection property="fields" destination="jtj-aX-iak" id="rmV-Bs-hfK"/>
+                        <outletCollection property="fields" destination="fop-Ix-WIJ" id="P6L-Vp-Qre"/>
+                        <outletCollection property="fields" destination="pDU-5G-L36" id="x0x-4m-sI3"/>
+                        <outletCollection property="fields" destination="A9d-PK-EhH" id="ybu-FA-LEE"/>
+                        <outletCollection property="fields" destination="KCf-4T-3b5" id="UZM-RT-NRi"/>
+                        <outletCollection property="fields" destination="fdz-zo-AkL" id="Xox-gf-flN"/>
+                        <outletCollection property="fields" destination="cnC-sT-koy" id="4lX-et-Ydk"/>
+                        <outletCollection property="fields" destination="N1U-Tp-0h3" id="Yjc-iT-BnR"/>
+                        <outletCollection property="fields" destination="c08-dK-Ae6" id="tkd-zd-VkW"/>
+                        <outletCollection property="fields" destination="uX7-75-ZRy" id="jnE-Bf-fLh"/>
+                        <outletCollection property="fields" destination="9cq-lZ-ZeO" id="ljf-pw-Mrm"/>
+                        <outletCollection property="fields" destination="Mhw-4M-ibI" id="RJO-Uv-ZMi"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Q9d-E1-GKb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

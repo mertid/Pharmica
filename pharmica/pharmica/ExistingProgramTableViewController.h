@@ -10,4 +10,6 @@
 
 @interface ExistingProgramTableViewController : UITableViewController
 
+@property (nonatomic, strong) NSArray *programList;
+
 @end

@@ -7,8 +7,13 @@
 //
 
 #import "ExistingProgramTableViewController.h"
+#import "Program.h"
+#import "AppDelegate.h"
 
 @interface ExistingProgramTableViewController ()
+
+@property (nonatomic) AppDelegate *app;
+@property (nonatomic) NSManagedObjectContext *context;
 
 @end
 
@@ -17,11 +22,16 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
+    self.app = [UIApplication sharedApplication].delegate;
+    self.context = self.app.managedObjectContext;
     
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    NSFetchRequest *req = [NSFetchRequest fetchRequestWithEntityName:@"Program"];
+    NSError *error;
+    self.programList = [self.context executeFetchRequest:req error:&error];
+    
+    [self.tableView reloadData];
+    
+
 }
 
 - (void)didReceiveMemoryWarning {
@@ -32,26 +42,28 @@
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-#warning Potentially incomplete method implementation.
-    // Return the number of sections.
-    return 0;
+
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-#warning Incomplete method implementation.
-    // Return the number of rows in the section.
-    return 0;
+
+    return self.programList.count;
 }
 
-/*
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ProgramCell" forIndexPath:indexPath];
     
     // Configure the cell...
+    Program *program = [self.programList objectAtIndex:indexPath.row];
+    [cell.textLabel setText:[NSString stringWithFormat:@"%@", [program valueForKey:@"programName"]]];
+//    [cell.detailTextLabel setText:[NSString stringWithFormat:@"%@",[program valueForKey:@""]]];
+    
     
     return cell;
 }
-*/
+
 
 /*
 // Override to support conditional editing of the table view.
