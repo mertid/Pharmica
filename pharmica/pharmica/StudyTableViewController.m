@@ -27,7 +27,7 @@
     
     // These three properties should be passed in from another view controller
     // Im simply setting them here for test purpose
-    self.milestoneType = @"clinical";
+    self.milestoneType = @"regulatory";
     self.attribute = @"study";
     self.name = @"Study";
     // Core data access
