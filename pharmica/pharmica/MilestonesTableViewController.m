@@ -27,23 +27,80 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    // These three properties should be passed in from another view controller
-    // Im simply setting them here for test purpose
-    self.milestoneType = @"clinical";
-    self.attribute = @"program";
-    self.name = @"Test Program";
     // Core data access
     AppDelegate *appdel = [UIApplication sharedApplication].delegate;
     NSManagedObjectContext *context = appdel.managedObjectContext;
     NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"Milestone"];
     NSError *error;
     // Predicate to fetch with type and attribute
-    [request setPredicate:[NSPredicate predicateWithFormat:@"(type = %@) AND (attribute = %@)", self.milestoneType, self.attribute]];
+    [request setPredicate:[NSPredicate predicateWithFormat:@"(type = %@) AND (associatedCategory = %@) AND (associatedName = %@)",
+                           self.milestoneType, self.associatedCategory, self.associatedName]];
     self.milestoneList = [context executeFetchRequest:request error:&error];
-    self.title = [NSString stringWithFormat:@"%@ Milestone", self.milestoneType.capitalizedString];
+    // If no result is fetched create new data for the program
+    if (self.milestoneList.count == 0) {
+        NSArray *titleList = nil;
+        // Regulatory milestone list for the program
+        if ([self.milestoneType isEqualToString:@"regulatory"]) {
+            titleList = @[@"IMPD",
+                          @"BLA Submission",
+                          @"BLA Approval",
+                          @"eIND Submission",
+                          @"eIND Approval",
+                          @"IND Submission",
+                          @"IND Approval",
+                          @"INDA Submission",
+                          @"INDa Approval",
+                          @"NDA Submission",
+                          @"NDA Approval",
+                          @"sNDA Submission",
+                          @"sNDA Approval",
+                          @"JNDA Submission",
+                          @"JNDA Approval",
+                          @"ANDA Submission",
+                          @"ANDA Approval",
+                          @"WMA Submission",
+                          @"WMA Approval",
+                          @"PIP Submission",
+                          @"PIP Approval",
+                          @"HDE Submission",
+                          @"HDE Approval"];
+            
+        }
+        // Clinical milestone list for the program
+        else if ([self.milestoneType isEqualToString:@"clinical"]) {
+            titleList = @[@"Preclinical Data Available",
+                          @"Program Start",
+                          @"Program End",
+                          @"First First In Man",
+                          @"Clinical Investigator Brochure Available",
+                          @"End of Phase I",
+                          @"Go/No Go - Phase II",
+                          @"Phase II Start",
+                          @"Go/No Go - Phase III",
+                          @"Phase III Start",
+                          @"Last Patient Last Visit",
+                          @"Last Data Available",
+                          @"Combined Technical Document",
+                          @"Phase IV Start"];
+        }
+        for (NSString *s in titleList) {
+            Milestone *ms = [NSEntityDescription insertNewObjectForEntityForName:@"Milestone"
+                                                          inManagedObjectContext:context];
+            [ms setName:s];
+            [ms setType:self.milestoneType];
+            [ms setAssociatedCategory:self.associatedCategory];
+            [ms setAssociatedName:self.associatedName];
+            [context insertObject:ms];
+            [appdel saveContext];
+        }
+        // Refetch after adding the managed objects
+        self.milestoneList = [context executeFetchRequest:request error:&error];
+    }
+    // Init other properties
     self.formatter = [[NSDateFormatter alloc] init];
     [self.formatter setDateStyle:NSDateFormatterLongStyle];
     [self.formatter setTimeStyle:NSDateFormatterNoStyle];
+    self.title = [NSString stringWithFormat:@"%@ Milestone for %@: %@", self.milestoneType.capitalizedString, self.associatedCategory.capitalizedString, self.associatedName];
     // Background tap dismisses date picker
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]
                                    initWithTarget:self

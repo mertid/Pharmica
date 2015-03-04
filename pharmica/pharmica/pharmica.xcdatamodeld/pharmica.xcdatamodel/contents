@@ -3,7 +3,8 @@
     <entity name="Milestone" representedClassName="Milestone" syncable="YES">
         <attribute name="actual" optional="YES" attributeType="Date" syncable="YES"/>
         <attribute name="adjusted" optional="YES" attributeType="Date" syncable="YES"/>
-        <attribute name="attribute" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="associatedCategory" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="associatedName" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="name" attributeType="String" syncable="YES"/>
         <attribute name="planned" optional="YES" attributeType="Date" syncable="YES"/>
         <attribute name="type" attributeType="String" syncable="YES"/>
@@ -29,7 +30,7 @@
         <attribute name="typeOfInvestigationalDrugApplication" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Milestone" positionX="-54" positionY="-9" width="128" height="135"/>
-        <element name="Program" positionX="-54" positionY="36" width="128" height="315"/>
+        <element name="Milestone" positionX="0" positionY="0" width="0" height="0"/>
+        <element name="Program" positionX="0" positionY="0" width="0" height="0"/>
     </elements>
 </model>

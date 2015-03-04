@@ -19,8 +19,8 @@
 		3033A1B71AA4E63100D9D2F0 /* ExistingProgramTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3033A1B51AA4E63100D9D2F0 /* ExistingProgramTableViewController.m */; };
 		308B6E051AA658E4008344C0 /* Program.m in Sources */ = {isa = PBXBuildFile; fileRef = 308B6E041AA658E4008344C0 /* Program.m */; };
 		4225E8FF1AA6331D0031D39D /* StudyTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4225E8FE1AA6331D0031D39D /* StudyTableViewController.m */; };
+		4225E9711AA76D560031D39D /* Milestone.m in Sources */ = {isa = PBXBuildFile; fileRef = 4225E9701AA76D560031D39D /* Milestone.m */; };
 		4231C6281AA10A15009B48F8 /* MilestonesTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4231C6271AA10A15009B48F8 /* MilestonesTableViewController.m */; };
-		423D1DA51AA42A6F003EF7B3 /* Milestone.m in Sources */ = {isa = PBXBuildFile; fileRef = 423D1DA41AA42A6F003EF7B3 /* Milestone.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,10 +55,10 @@
 		308B6E041AA658E4008344C0 /* Program.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Program.m; sourceTree = "<group>"; };
 		4225E8FD1AA6331D0031D39D /* StudyTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StudyTableViewController.h; sourceTree = "<group>"; };
 		4225E8FE1AA6331D0031D39D /* StudyTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StudyTableViewController.m; sourceTree = "<group>"; };
+		4225E96F1AA76D560031D39D /* Milestone.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Milestone.h; sourceTree = "<group>"; };
+		4225E9701AA76D560031D39D /* Milestone.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Milestone.m; sourceTree = "<group>"; };
 		4231C6261AA10A15009B48F8 /* MilestonesTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MilestonesTableViewController.h; sourceTree = "<group>"; };
 		4231C6271AA10A15009B48F8 /* MilestonesTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MilestonesTableViewController.m; sourceTree = "<group>"; };
-		423D1DA31AA42A6F003EF7B3 /* Milestone.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Milestone.h; sourceTree = "<group>"; };
-		423D1DA41AA42A6F003EF7B3 /* Milestone.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Milestone.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,8 +118,8 @@
 				226E94031AA0F297004EE212 /* pharmica.xcdatamodeld */,
 				308B6E031AA658E4008344C0 /* Program.h */,
 				308B6E041AA658E4008344C0 /* Program.m */,
-				423D1DA31AA42A6F003EF7B3 /* Milestone.h */,
-				423D1DA41AA42A6F003EF7B3 /* Milestone.m */,
+				4225E96F1AA76D560031D39D /* Milestone.h */,
+				4225E9701AA76D560031D39D /* Milestone.m */,
 				226E93FC1AA0F297004EE212 /* Supporting Files */,
 			);
 			path = pharmica;
@@ -256,10 +256,10 @@
 				226E94051AA0F297004EE212 /* pharmica.xcdatamodeld in Sources */,
 				4231C6281AA10A15009B48F8 /* MilestonesTableViewController.m in Sources */,
 				3033A1B61AA4E63100D9D2F0 /* CreateProgramViewController.m in Sources */,
-				423D1DA51AA42A6F003EF7B3 /* Milestone.m in Sources */,
 				4225E8FF1AA6331D0031D39D /* StudyTableViewController.m in Sources */,
 				3033A1B71AA4E63100D9D2F0 /* ExistingProgramTableViewController.m in Sources */,
 				226E93FF1AA0F297004EE212 /* main.m in Sources */,
+				4225E9711AA76D560031D39D /* Milestone.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

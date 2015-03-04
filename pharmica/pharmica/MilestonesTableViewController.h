@@ -12,7 +12,7 @@
 @interface MilestonesTableViewController : UITableViewController <UITextFieldDelegate>
 
 @property (nonatomic, copy) NSString *milestoneType;  // Regulatory or Clinical
-@property (nonatomic, copy) NSString *attribute;  // Study or Program
-@property (nonatomic, copy) NSString *name;       // Name of the study/program
+@property (nonatomic, copy) NSString *associatedCategory;  // Study or Program
+@property (nonatomic, copy) NSString *associatedName;       // Name of the study/program
 
 @end

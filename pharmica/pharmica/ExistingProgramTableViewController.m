@@ -7,6 +7,7 @@
 //
 
 #import "ExistingProgramTableViewController.h"
+#import "MilestonesTableViewController.h"
 #import "Program.h"
 #import "AppDelegate.h"
 
@@ -14,6 +15,7 @@
 
 @property (nonatomic) AppDelegate *app;
 @property (nonatomic) NSManagedObjectContext *context;
+@property (nonatomic) NSUInteger selectedRow;
 
 @end
 
@@ -24,6 +26,7 @@
     
     self.app = [UIApplication sharedApplication].delegate;
     self.context = self.app.managedObjectContext;
+    self.selectedRow = NSNotFound;
     
     NSFetchRequest *req = [NSFetchRequest fetchRequestWithEntityName:@"Program"];
     NSError *error;
@@ -64,6 +67,33 @@
     return cell;
 }
 
+#pragma mark - Table View Delegate
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    self.selectedRow = indexPath.row;
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    UIAlertController *actionSheet = [UIAlertController alertControllerWithTitle:@"Type of milestone"
+                                                                         message:@"Which type of milestone would you like to view?"
+                                                                  preferredStyle:UIAlertControllerStyleActionSheet];
+    UIAlertAction *regulatoryAction = [UIAlertAction actionWithTitle:@"Regulatory" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+        [self performSegueWithIdentifier:@"showProgramMilestones" sender:action];
+    }];
+    UIAlertAction *clinicalAction = [UIAlertAction actionWithTitle:@"Clinical" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+        [self performSegueWithIdentifier:@"showProgramMilestones" sender:action];
+    }];
+    UIAlertAction *dismissAlert = [UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleCancel handler:nil];
+    [actionSheet addAction:regulatoryAction];
+    [actionSheet addAction:clinicalAction];
+    [actionSheet addAction:dismissAlert];
+    UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
+    actionSheet.popoverPresentationController.sourceView = cell.contentView;
+    actionSheet.popoverPresentationController.sourceRect = cell.contentView.frame;
+    [self presentViewController:actionSheet animated:YES completion:nil];
+}
+
+
+
 
 /*
 // Override to support conditional editing of the table view.
@@ -99,14 +129,27 @@
 }
 */
 
-/*
+
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
+    if ([segue.identifier isEqualToString:@"showProgramMilestones"]) {
+        MilestonesTableViewController *destination = (MilestonesTableViewController *)segue.destinationViewController;
+        UIAlertAction *senderAction = sender;
+        NSString *type = senderAction.title.lowercaseString;
+        if (self.selectedRow == NSNotFound) {
+            NSLog(@"No row selected!");
+            return;
+        }
+        Program *currentProgram = self.programList[self.selectedRow];
+        [destination setMilestoneType:type];
+        [destination setAssociatedCategory:@"program"];
+        [destination setAssociatedName:currentProgram.programName];
+    }
 }
-*/
+
 
 @end

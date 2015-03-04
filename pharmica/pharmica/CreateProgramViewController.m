@@ -126,10 +126,10 @@
         [self.context insertObject:newProgram];
         [self.app saveContext];
         
-        [self dismissViewControllerAnimated:YES completion:nil];
 
 
     }
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 

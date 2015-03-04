@@ -91,7 +91,7 @@
                                                       inManagedObjectContext:context];
         [ms setName:s];
         [ms setType:@"regulatory"];
-        [ms setAttribute:@"program"];
+        [ms setAssociatedCategory:@"program"];
         [context insertObject:ms];
         [self.appdel saveContext];
     }
@@ -100,7 +100,7 @@
                                                       inManagedObjectContext:context];
         [ms setName:s];
         [ms setType:@"clinical"];
-        [ms setAttribute:@"program"];
+        [ms setAssociatedCategory:@"program"];
         [context insertObject:ms];
         [self.appdel saveContext];
     }
@@ -109,7 +109,7 @@
                                                       inManagedObjectContext:context];
         [ms setName:s];
         [ms setType:@"regulatory"];
-        [ms setAttribute:@"study"];
+        [ms setAssociatedCategory:@"study"];
         [context insertObject:ms];
         [self.appdel saveContext];
 

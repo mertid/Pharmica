@@ -2,7 +2,7 @@
 //  Milestone.h
 //  pharmica
 //
-//  Created by Di Kong on 3/2/15.
+//  Created by Di Kong on 3/4/15.
 //  Copyright (c) 2015 Merritt Tidwell. All rights reserved.
 //
 
@@ -12,17 +12,12 @@
 
 @interface Milestone : NSManagedObject
 
-@property (nonatomic, retain) NSString * name;
-@property (nonatomic, retain) NSString * type;
-@property (nonatomic, retain) NSDate * planned;
 @property (nonatomic, retain) NSDate * actual;
 @property (nonatomic, retain) NSDate * adjusted;
-@property (nonatomic, retain) NSString * attribute;
-
-
-- (IBAction)setPlannedDate:(UIDatePicker *)sender;
-- (IBAction)setActualDate:(UIDatePicker *)sender;
-- (IBAction)setAdjustedDate:(UIDatePicker *)sender;
-
+@property (nonatomic, retain) NSString * associatedCategory;  // attribute is now associatedCategory
+@property (nonatomic, retain) NSString * name;
+@property (nonatomic, retain) NSDate * planned;
+@property (nonatomic, retain) NSString * type;
+@property (nonatomic, retain) NSString * associatedName;      // added associatedName for name of program/study
 
 @end
