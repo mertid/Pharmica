@@ -28,20 +28,58 @@
     // These three properties should be passed in from another view controller
     // Im simply setting them here for test purpose
     self.milestoneType = @"regulatory";
-    self.attribute = @"study";
-    self.name = @"Study";
+    self.associatedCategory = @"study";
+    self.associatedName = @"Study";
     // Core data access
     AppDelegate *appdel = [UIApplication sharedApplication].delegate;
     NSManagedObjectContext *context = appdel.managedObjectContext;
     NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"Milestone"];
     NSError *error;
     // Predicate to fetch with type and attribute
-    [request setPredicate:[NSPredicate predicateWithFormat:@"(type = %@) AND (attribute = %@)", self.milestoneType, self.attribute]];
-    self.milestoneList = [context executeFetchRequest:request error:&error];
-    self.title = [NSString stringWithFormat:@"%@ Milestone", self.milestoneType.capitalizedString];
+    [request setPredicate:[NSPredicate predicateWithFormat:@"(type = %@) AND (associatedCategory = %@) AND (associatedName = %@)",
+                           self.milestoneType, self.associatedCategory, self.associatedName]];
+    self.milestoneList = [context executeFetchRequest:request error:&error];// If no result is fetched create new data for the program
+    if (self.milestoneList.count == 0) {
+        NSArray *titleList = @[@"Draft Protocol Available",
+                               @"Transfer of Obligation",
+                               @"Study Start Date",
+                               @"Study End Date",
+                               @"Final Protocol Available",
+                               @"Informed Consent Available",
+                               @"Contract Template Available",
+                               @"Drug Available",
+                               @"Labels Available",
+                               @"Other Clinical Supplies Available",
+                               @"First Patient Enrolled",
+                               @"Last Patient Enrolled",
+                               @"First Patient Screened",
+                               @"Last Patient Screened",
+                               @"First Patient Randomized",
+                               @"Last Patient Randomized",
+                               @"Last Patient Last Visit",
+                               @"Last Data Avaliable",
+                               @"Data Base Lock",
+                               @"Clinical Study Report",
+                               @"Trial Master File Archived",
+                               ];
+        for (NSString *s in titleList) {
+            Milestone *ms = [NSEntityDescription insertNewObjectForEntityForName:@"Milestone"
+                                                          inManagedObjectContext:context];
+            [ms setName:s];
+            [ms setType:self.milestoneType];
+            [ms setAssociatedCategory:self.associatedCategory];
+            [ms setAssociatedName:self.associatedName];
+            [context insertObject:ms];
+            [appdel saveContext];
+        }
+        // Refetch after adding the managed objects
+        self.milestoneList = [context executeFetchRequest:request error:&error];
+    }
+    // Init other properties
     self.formatter = [[NSDateFormatter alloc] init];
     [self.formatter setDateStyle:NSDateFormatterLongStyle];
     [self.formatter setTimeStyle:NSDateFormatterNoStyle];
+    self.title = [NSString stringWithFormat:@"%@ Milestone for %@", self.milestoneType.capitalizedString, self.associatedCategory.capitalizedString];
     // Background tap dismisses date picker
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]
                                    initWithTarget:self
@@ -64,6 +102,10 @@
                   forControlEvents:UIControlEventValueChanged];
 }
 
+- (void)dismissKeyboard {
+    
+    [self.view endEditing:YES];
+}
 
 - (IBAction)plannedPickerValueChanged:(UIDatePicker *)sender {
     
@@ -80,6 +122,7 @@
     
     
 }
+
 - (IBAction)actualPickerValueChanged:(UIDatePicker *)sender {
     
     AppDelegate *appdel = [UIApplication sharedApplication].delegate;
@@ -108,10 +151,6 @@
     [appdel saveContext];
 }
 
-
-
-
-
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
@@ -131,7 +170,7 @@
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-        UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
     
     // Pointer to cell label & text fields
     UILabel *nameLabel = (UILabel *)[cell viewWithTag:1];
@@ -163,6 +202,10 @@
     UITableViewCell *sectionHeader = [tableView dequeueReusableCellWithIdentifier:@"SectionHeader2"];
     return sectionHeader;
 }
+
+
+#pragma mark - UITextField Delegate
+
 - (void)textFieldDidBeginEditing:(UITextField *)textField {
     
     // Selected textfield is assigned to be visible to whole interface
