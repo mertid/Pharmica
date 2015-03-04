@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import <CoreData/CoreData.h>
+#import <UIKit/UIKit.h>
 
 
 @interface Program : NSManagedObject
@@ -19,10 +20,10 @@
 @property (nonatomic, retain) NSString * corporatedObjective;
 @property (nonatomic, retain) NSNumber * cost;
 @property (nonatomic, retain) NSString * indication;
-@property (nonatomic, retain) NSNumber * investigatioonalDrugApplicationField;
-@property (nonatomic, retain) NSString * planedEndDate;
+@property (nonatomic, retain) NSNumber * investigationalDrugApplicationField;
+@property (nonatomic, retain) NSDate * planedEndDate;
 @property (nonatomic, retain) NSNumber * plannedBaselineBudget;
-@property (nonatomic, retain) NSString * plannedStartDate;
+@property (nonatomic, retain) NSDate * plannedStartDate;
 @property (nonatomic, retain) NSString * programAdminstration;
 @property (nonatomic, retain) NSString * programDescription;
 @property (nonatomic, retain) NSString * programLead;

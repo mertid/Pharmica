@@ -18,7 +18,7 @@
 @dynamic corporatedObjective;
 @dynamic cost;
 @dynamic indication;
-@dynamic investigatioonalDrugApplicationField;
+@dynamic investigationalDrugApplicationField;
 @dynamic planedEndDate;
 @dynamic plannedBaselineBudget;
 @dynamic plannedStartDate;
@@ -29,5 +29,6 @@
 @dynamic status;
 @dynamic therapeuticArea;
 @dynamic typeOfInvestigationalDrugApplication;
+
 
 @end

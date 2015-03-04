@@ -17,10 +17,10 @@
         <attribute name="corporatedObjective" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="cost" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
         <attribute name="indication" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="investigatioonalDrugApplicationField" optional="YES" attributeType="Boolean" syncable="YES"/>
-        <attribute name="planedEndDate" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="investigationalDrugApplicationField" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="planedEndDate" optional="YES" attributeType="Date" syncable="YES"/>
         <attribute name="plannedBaselineBudget" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
-        <attribute name="plannedStartDate" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="plannedStartDate" optional="YES" attributeType="Date" syncable="YES"/>
         <attribute name="programAdminstration" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="programDescription" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="programLead" optional="YES" attributeType="String" syncable="YES"/>
