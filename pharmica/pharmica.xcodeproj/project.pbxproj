@@ -7,10 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		224EDD9B1AA7BC8E005801A6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 224EDD9A1AA7BC8E005801A6 /* Main.storyboard */; };
 		226E93FF1AA0F297004EE212 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 226E93FE1AA0F297004EE212 /* main.m */; };
 		226E94021AA0F297004EE212 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 226E94011AA0F297004EE212 /* AppDelegate.m */; };
 		226E94051AA0F297004EE212 /* pharmica.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 226E94031AA0F297004EE212 /* pharmica.xcdatamodeld */; };
-		226E940B1AA0F297004EE212 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 226E94091AA0F297004EE212 /* Main.storyboard */; };
 		226E940D1AA0F297004EE212 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 226E940C1AA0F297004EE212 /* Images.xcassets */; };
 		226E94101AA0F297004EE212 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 226E940E1AA0F297004EE212 /* LaunchScreen.xib */; };
 		226E941C1AA0F298004EE212 /* pharmicaTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 226E941B1AA0F298004EE212 /* pharmicaTests.m */; };
@@ -35,13 +35,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		224EDD9A1AA7BC8E005801A6 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		226E93F91AA0F297004EE212 /* pharmica.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = pharmica.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		226E93FD1AA0F297004EE212 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		226E93FE1AA0F297004EE212 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		226E94001AA0F297004EE212 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		226E94011AA0F297004EE212 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		226E94041AA0F297004EE212 /* pharmica.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = pharmica.xcdatamodel; sourceTree = "<group>"; };
-		226E940A1AA0F297004EE212 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		226E940C1AA0F297004EE212 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		226E940F1AA0F297004EE212 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		226E94151AA0F297004EE212 /* pharmicaTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = pharmicaTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -111,11 +111,11 @@
 				4225E8FE1AA6331D0031D39D /* StudyTableViewController.m */,
 				4231C6261AA10A15009B48F8 /* MilestonesTableViewController.h */,
 				4231C6271AA10A15009B48F8 /* MilestonesTableViewController.m */,
-				226E94091AA0F297004EE212 /* Main.storyboard */,
 				3033A1B21AA4E63100D9D2F0 /* CreateProgramViewController.h */,
 				3033A1B31AA4E63100D9D2F0 /* CreateProgramViewController.m */,
 				3033A1B41AA4E63100D9D2F0 /* ExistingProgramTableViewController.h */,
 				3033A1B51AA4E63100D9D2F0 /* ExistingProgramTableViewController.m */,
+				224EDD9A1AA7BC8E005801A6 /* Main.storyboard */,
 				226E940C1AA0F297004EE212 /* Images.xcassets */,
 				226E940E1AA0F297004EE212 /* LaunchScreen.xib */,
 				226E94031AA0F297004EE212 /* pharmica.xcdatamodeld */,
@@ -245,9 +245,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				226E940B1AA0F297004EE212 /* Main.storyboard in Resources */,
 				226E94101AA0F297004EE212 /* LaunchScreen.xib in Resources */,
 				226E940D1AA0F297004EE212 /* Images.xcassets in Resources */,
+				224EDD9B1AA7BC8E005801A6 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -297,14 +297,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		226E94091AA0F297004EE212 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				226E940A1AA0F297004EE212 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		226E940E1AA0F297004EE212 /* LaunchScreen.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
