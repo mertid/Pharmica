@@ -61,8 +61,6 @@
     // Configure the cell...
     Program *program = [self.programList objectAtIndex:indexPath.row];
     [cell.textLabel setText:[NSString stringWithFormat:@"%@", [program valueForKey:@"programName"]]];
-//    [cell.detailTextLabel setText:[NSString stringWithFormat:@"%@",[program valueForKey:@""]]];
-    
     
     return cell;
 }
@@ -76,16 +74,20 @@
     UIAlertController *actionSheet = [UIAlertController alertControllerWithTitle:@"Type of milestone"
                                                                          message:@"Which type of milestone would you like to view?"
                                                                   preferredStyle:UIAlertControllerStyleActionSheet];
-    UIAlertAction *regulatoryAction = [UIAlertAction actionWithTitle:@"Regulatory" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+    UIAlertAction *regulatoryAction = [UIAlertAction actionWithTitle:@"Regulatory"
+                                                               style:UIAlertActionStyleDefault
+                                                             handler:^(UIAlertAction *action) {
         [self performSegueWithIdentifier:@"showProgramMilestones" sender:action];
     }];
-    UIAlertAction *clinicalAction = [UIAlertAction actionWithTitle:@"Clinical" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+    UIAlertAction *clinicalAction = [UIAlertAction actionWithTitle:@"Clinical"
+                                                             style:UIAlertActionStyleDefault
+                                                           handler:^(UIAlertAction *action) {
         [self performSegueWithIdentifier:@"showProgramMilestones" sender:action];
     }];
-    UIAlertAction *dismissAlert = [UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleCancel handler:nil];
+    /*UIAlertAction *dismissAlert = [UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleCancel handler:nil];*/
     [actionSheet addAction:regulatoryAction];
     [actionSheet addAction:clinicalAction];
-    [actionSheet addAction:dismissAlert];
+    /*[actionSheet addAction:dismissAlert];*/
     UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
     actionSheet.popoverPresentationController.sourceView = cell.contentView;
     actionSheet.popoverPresentationController.sourceRect = cell.contentView.frame;

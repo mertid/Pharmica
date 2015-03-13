@@ -33,8 +33,6 @@
     // core data access
     self.app = [UIApplication sharedApplication].delegate;
     self.context = self.app.managedObjectContext;
-    NSFetchRequest *req = [NSFetchRequest fetchRequestWithEntityName:@"Program"];
-    NSError *error;
     
     // set date formatter
     self.formatter = [[NSDateFormatter alloc] init];
@@ -179,23 +177,6 @@
     }
     [self.navigationController popViewControllerAnimated:YES];
 }
-//
-//#pragma mark - Text Field Delegate
-//
-//- (void)textFieldDidBeginEditing:(UITextField *)textField {
-//    
-//    // Selected textfield is assigned to be visible to whole interface
-//    // so that other method has access to it (xxxPickerValueChanged)
-//    self.editingTextField = textField;
-//}
-//
-//- (void)textFieldDidEndEditing:(UITextField *)textField {
-//    
-//    // Editing done, assign nil to the property
-//    self.editingTextField = nil;
-//}
-    
-
 
 /*
 #pragma mark - Navigation

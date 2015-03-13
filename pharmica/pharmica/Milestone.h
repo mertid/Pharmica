@@ -14,10 +14,10 @@
 
 @property (nonatomic, retain) NSDate * actual;
 @property (nonatomic, retain) NSDate * adjusted;
-@property (nonatomic, retain) NSString * associatedCategory;  // attribute is now associatedCategory
+@property (nonatomic, retain) NSString * associatedCategory;
 @property (nonatomic, retain) NSString * name;
 @property (nonatomic, retain) NSDate * planned;
 @property (nonatomic, retain) NSString * type;
-@property (nonatomic, retain) NSString * associatedName;      // added associatedName for name of program/study
+@property (nonatomic, retain) NSString * associatedName;
 
 @end

@@ -9,7 +9,9 @@
 #import "StudyTableViewController.h"
 #import "Milestone.h"
 #import "AppDelegate.h"
+
 @interface StudyTableViewController ()
+
 @property (nonatomic) NSManagedObjectContext *context;
 @property (nonatomic) NSArray *milestoneList;
 @property (nonatomic) NSDateFormatter *formatter;
