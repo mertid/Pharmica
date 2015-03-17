@@ -112,12 +112,7 @@
         [ms setAssociatedCategory:@"study"];
         [context insertObject:ms];
         [self.appdel saveContext];
-
-
-        
     }
-
-
 
 }
 

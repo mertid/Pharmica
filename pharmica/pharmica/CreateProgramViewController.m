@@ -23,13 +23,13 @@
 @end
 
 @implementation CreateProgramViewController {
-        UITextField *textField;
+    UITextField *textField;
 }
 
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-
+    
     // core data access
     self.app = [UIApplication sharedApplication].delegate;
     self.context = self.app.managedObjectContext;
@@ -49,13 +49,13 @@
     self.plannedStartPicker = [[UIDatePicker alloc] init];
     self.plannedStartPicker.datePickerMode = UIDatePickerModeDate;
     [self.plannedStartPicker addTarget:self action:@selector(plannedStartPickerValueChanged:)
-                 forControlEvents:UIControlEventValueChanged];
+                      forControlEvents:UIControlEventValueChanged];
     
     // Date picker for End planned date
     self.plannedEndPicker = [[UIDatePicker alloc] init];
     self.plannedEndPicker.datePickerMode = UIDatePickerModeDate;
     [self.plannedEndPicker addTarget:self action:@selector(plannedEndPickerValueChanged:)
-                 forControlEvents:UIControlEventValueChanged];
+                    forControlEvents:UIControlEventValueChanged];
     
     
     // set the date picker as the input
@@ -64,7 +64,7 @@
     
     textField = self.fields[7];
     textField.inputView = self.plannedEndPicker;
-
+    
 }
 
 - (void)dismissKeyboard {
@@ -82,7 +82,7 @@
     textField = self.fields[6];
     textField.text = [self.formatter stringFromDate:sender.date];
     textField.delegate = self;
-
+    
 }
 
 -(IBAction)plannedEndPickerValueChanged:(UIDatePicker *)sender {
@@ -151,7 +151,7 @@
         
         textField = self.fields[14];
         [newProgram setBudgetRemaining:@([textField.text doubleValue])];
-
+        
         textField = self.fields[15];
         [newProgram setStatus:textField.text];
         
@@ -167,25 +167,25 @@
         
         textField = self.fields[16];
         [newProgram setTypeOfInvestigationalDrugApplication:textField.text];
-
-
+        
+        
         [self.context insertObject:newProgram];
         [self.app saveContext];
         
-
-
+        
+        
     }
     [self.navigationController popViewControllerAnimated:YES];
 }
 
 /*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
+ #pragma mark - Navigation
+ 
+ // In a storyboard-based application, you will often want to do a little preparation before navigation
+ - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+ // Get the new view controller using [segue destinationViewController].
+ // Pass the selected object to the new view controller.
+ }
+ */
 
 @end
